@@ -1,0 +1,150 @@
+.jumbotron-fluid {
+  min-height: 100vh;
+  margin-bottom: 0px;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.calculator-box {
+  height: 400px;
+  width: 250px;
+  border: 2px solid black;
+  margin: 0 auto;
+  border-radius: 25px;
+  background-color: black;
+  box-shadow: 5px 5px 10px grey;
+}
+
+.results-screen {
+  width: 230px;
+  height: 55px;
+  margin: 0px auto;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 15px;
+  overflow: hidden;
+  color: white;
+}
+
+.float-right {
+  float: right;
+}
+
+.button-stndrd{
+  line-height: 50px;
+  height: 50px;
+  width: 50px;
+  border: 2px solid black;
+  float:left;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.button-large {
+  line-height: 50px;
+  height: 50px;
+  width: 110px;
+  border: 2px solid black;
+  float: left;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+.top-left-button {
+  margin: 0px 5px 5px 10px;
+}
+
+.middle-left-button {
+  margin: 5px 5px 5px 10px;
+}
+
+.bottom-left-button {
+  margin: 5px 5px 10px 10px;
+}
+
+.middle-button {
+  margin: 5px;
+}
+
+.top-middle-button {
+  margin: 0px 5px 5px 5px;
+}
+
+.top-right-button {
+  margin: 0px 10px 5px 5px;
+}
+
+.middle-right-button {
+  margin: 5px 0px 5px 5px;
+}
+
+.bottom-right-button {
+  margin: 5px 0px 10px 5px;
+}
+
+.middle-bottom-button {
+  margin: 5px 5px 10px 5px;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:hover {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.answer {
+  text-align: right;
+  margin-right: 10px;
+  line-height: 50px;
+  font-size: 40px;
+}
+
+.core-group {
+  background-color: #514f4b;
+  color: white;
+  border-color: #514f4b;
+}
+
+.right-column {
+  background-color: #efa715;
+  color: white;
+  border-color: #efa715;
+}
+
+.top-row {
+  background-color: #aaa9a9;
+  color: black;
+  border-color: #aaa9a9
+}
+
+.core-group:active {
+  background-color: #939393;
+  border-color: #939393;
+}
+
+.top-row:active {
+  background-color: #e5e5e5;
+  border-color: #e5e5e5;
+}
+
+.right-column:active {
+  background-color: #e0bb57;
+  border-color: #e0bb57;
+}
+
+footer {
+  margin-top: 24px;
+}
+
+#name {
+  color: black;
+  text-decoration: underline;
+}
