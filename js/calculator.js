@@ -50,7 +50,9 @@ $(document).ready(function() {
 
   $("#multiply-button").on("click", function(e) {
     e.preventDefault();
-    //This if statement is to avoid beginning the calculation with a multiply as it will lead to an error and also to avoid stacking multiple multiplication signs
+    //This if statement is to avoid beginning the calculation with a multiply as
+    //It will lead to an error and also to avoid stacking multiple
+    //Multiplication signs
     if (
       displayAnswer[displayAnswer.length - 1] != "×" &&
       displayAnswer.length !== 0
@@ -62,7 +64,8 @@ $(document).ready(function() {
 
   $("#divide-button").on("click", function(e) {
     e.preventDefault();
-    //This if statement is to achieve the same as the if statement for the multiply button above.
+    //This if statement is to achieve the same as the if statement for the
+    //Multiply button above.
     if (
       displayAnswer[displayAnswer.length - 1] !== "÷" &&
       displayAnswer.length !== 0
@@ -76,14 +79,16 @@ $(document).ready(function() {
 
   $("#equals-button").on("click", function(e) {
     e.preventDefault();
-    //These replace methods are to reduce minus and additions to a single mathematical operator
+    //These replace methods are to reduce minus and additions to a single
+    //Mathematical operator
     displayAnswer = displayAnswer.replace(/\-{2}/g, "+");
     displayAnswer = displayAnswer.replace(/\-\+/g, "-");
     displayAnswer = displayAnswer.replace(/\+\-/g, "-");
     displayAnswer = displayAnswer.replace(/\×/g, "*");
     displayAnswer = displayAnswer.replace(/\÷/g, "/");
     displayAnswer = eval(displayAnswer);
-    //This if statement is to reduce the number of digits to that the entire number can be seen on the calculator screen
+    //This if statement is to reduce the number of digits to that the entire
+    //Number can be seen on the calculator screen
     if (isNaN(displayAnswer) ||
         !isFinite(displayAnswer)) {
       $('#display').text("Error");
@@ -99,7 +104,9 @@ $(document).ready(function() {
 
   $("#decimal-button").on("click", function(e) {
     e.preventDefault();
-    //This if statement is incase the user wants to begin with a 0.x decimal or wants to apply a mathematical operator to it without wanting to enter 0 and then enter a decimal
+    //This if statement is incase the user wants to begin with a 0.x decimal or
+    //Wants to apply a mathematical operator to it without wanting to enter 0
+    //And then enter a decimal
     if (
       displayAnswer.length === 0 ||
       displayAnswer[displayAnswer.length - 1] == "+" ||
