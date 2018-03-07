@@ -1,13 +1,14 @@
 $(document).ready(function() {
   $('.calculator-box').draggable();
   var displayAnswer = "";
+  var $display = $("#display");
 
   //----NUMBER BUTTONS----
 
   $(".number-btn").on("click", function(e) {
     e.preventDefault();
     displayAnswer += $(this).attr("value");
-    $("#display").text(displayAnswer);
+    $display.text(displayAnswer);
   });
 
   //----OPERATOR BUTTONS----
@@ -27,7 +28,7 @@ $(document).ready(function() {
     ) {
       displayAnswer += "+";
     }
-    $("#display").text(displayAnswer);
+    $display.text(displayAnswer);
   });
 
   $("#minus-button").on("click", function(e) {
@@ -44,7 +45,7 @@ $(document).ready(function() {
     ) {
       displayAnswer += "-";
     }
-    $("#display").text(displayAnswer);
+    $display.text(displayAnswer);
   });
 
   $("#multiply-button").on("click", function(e) {
@@ -55,7 +56,7 @@ $(document).ready(function() {
       displayAnswer.length !== 0
     ) {
       displayAnswer += "×";
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
   });
 
@@ -67,7 +68,7 @@ $(document).ready(function() {
       displayAnswer.length !== 0
     ) {
       displayAnswer += "÷";
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
   });
 
@@ -92,7 +93,7 @@ $(document).ready(function() {
         displayAnswer = displayAnswer.toPrecision(9);
       }
       displayAnswer = displayAnswer.toString();
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
   });
 
@@ -111,23 +112,23 @@ $(document).ready(function() {
     } else if (displayAnswer[displayAnswer.length - 1] !== ".") {
       displayAnswer += ".";
     }
-    $("#display").text(displayAnswer);
+    $display.text(displayAnswer);
   });
 
   $("#clear-button").on("click", function(e) {
     e.preventDefault();
     displayAnswer = "";
-    $("#display").text("0");
+    $display.text("0");
   });
 
   $("#delete-button").on("click", function(e) {
     e.preventDefault();
     if (displayAnswer.length > 0) {
       displayAnswer = displayAnswer.substr(0, displayAnswer.length - 1);
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
     if (displayAnswer.length === 0) {
-      $("#display").text("0");
+      $display.text("0");
     }
   });
 
@@ -149,7 +150,7 @@ $(document).ready(function() {
       displayAnswer.shift();
       displayAnswer = displayAnswer.join("");
     }
-    $("#display").text(displayAnswer);
+    $display.text(displayAnswer);
   });
 
   //---- KEYBOARD INPUT ----
@@ -157,19 +158,19 @@ $(document).ready(function() {
   $("body").keypress(function(e) {
     if (48 <= e.which && e.which <= 57) {
       displayAnswer += String.fromCharCode(e.which);
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
     if (e.which == 65 || e.which == 97) {
       displayAnswer = "";
-      $("#display").text("0");
+      $display.text("0");
     }
     if (e.which == 8 || e.which == 67 || e.which == 99) {
       if (displayAnswer.length > 0) {
         displayAnswer = displayAnswer.substr(0, displayAnswer.length - 1);
-        $("#display").text(displayAnswer);
+        $display.text(displayAnswer);
       }
       if (displayAnswer.length === 0) {
-        $("#display").text("0");
+        $display.text("0");
       }
     }
     if (e.which == 43) {
@@ -185,7 +186,7 @@ $(document).ready(function() {
       ) {
         displayAnswer += "+";
       }
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
     if (e.which == 45) {
       if (
@@ -199,7 +200,7 @@ $(document).ready(function() {
       ) {
         displayAnswer += "-";
       }
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
     if (e.which == 42) {
       if (
@@ -207,7 +208,7 @@ $(document).ready(function() {
         displayAnswer.length !== 0
       ) {
         displayAnswer += "×";
-        $("#display").text(displayAnswer);
+        $display.text(displayAnswer);
       }
     }
     if (e.which == 47) {
@@ -216,7 +217,7 @@ $(document).ready(function() {
         displayAnswer.length !== 0
       ) {
         displayAnswer += "÷";
-        $("#display").text(displayAnswer);
+        $display.text(displayAnswer);
       }
     }
     if (e.which == 13 || e.which == 61) {
@@ -230,7 +231,7 @@ $(document).ready(function() {
         displayAnswer = displayAnswer.toPrecision(9);
       }
       displayAnswer = displayAnswer.toString();
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
     if (e.which == 46) {
       if (
@@ -244,7 +245,7 @@ $(document).ready(function() {
       } else if (displayAnswer[displayAnswer.length - 1] !== ".") {
         displayAnswer += ".";
       }
-      $("#display").text(displayAnswer);
+      $display.text(displayAnswer);
     }
   });
 });
